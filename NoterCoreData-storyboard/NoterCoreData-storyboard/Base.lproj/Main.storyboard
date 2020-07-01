@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ou6-wO-KHj">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NOTER-->
+        <scene sceneID="N8C-LG-uur">
+            <objects>
+                <tableViewController id="zYo-IZ-uyR" customClass="MainTableViewController" customModule="NoterCoreData_storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nE5-KR-HT0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cell" rowHeight="45" id="Egf-hJ-59A" customClass="NoteCell" customModule="NoterCoreData_storyboard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Egf-hJ-59A" translatesAutoresizingMaskIntoConstraints="NO" id="Uqv-lW-i1H">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1c-Qo-bch">
+                                            <rect key="frame" x="15" y="5" width="320" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Z4e-tf-xAp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="v1c-Qo-bch" firstAttribute="leading" secondItem="Uqv-lW-i1H" secondAttribute="leading" constant="15" id="AKQ-XE-8P2"/>
+                                        <constraint firstItem="v1c-Qo-bch" firstAttribute="top" secondItem="Uqv-lW-i1H" secondAttribute="top" constant="5" id="hkm-Rd-swr"/>
+                                        <constraint firstAttribute="bottom" secondItem="v1c-Qo-bch" secondAttribute="bottom" constant="5" id="n70-Xw-nHk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="noteTitle" destination="v1c-Qo-bch" id="mOh-xw-naV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zYo-IZ-uyR" id="3sy-ef-y6J"/>
+                            <outlet property="delegate" destination="zYo-IZ-uyR" id="ocG-HP-PVe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="NOTER" largeTitleDisplayMode="always" id="Jku-u3-lWJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="afz-Mg-7bv">
+                            <color key="tintColor" red="1" green="0.6761493448" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="JJj-3H-ekv" kind="presentation" identifier="noteSegue" id="PIc-f7-qZQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNoteButton" destination="afz-Mg-7bv" id="Dil-1G-Emg"/>
+                        <outlet property="notesTableView" destination="nE5-KR-HT0" id="ctL-ef-Yrj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YvT-5u-vuX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620.289855072464" y="94.565217391304358"/>
+        </scene>
+        <!--Note View Controller-->
+        <scene sceneID="PCc-GV-Iky">
+            <objects>
+                <viewController id="JJj-3H-ekv" customClass="NoteViewController" customModule="NoterCoreData_storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a2M-lx-WDC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cHK-nH-6ym">
+                                <rect key="frame" x="47.666666666666657" y="10" width="318.66666666666674" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple note&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe5-ho-Uqq">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="wH7-Od-JC5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rOU-IG-dTG">
+                                        <rect key="frame" x="145" y="-3.5527136788005009e-15" width="28.666666666666657" height="34.666666666666671"/>
+                                        <color key="tintColor" red="1" green="0.6761493448" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rOU-IG-dTG" secondAttribute="height" multiplier="4:5" id="JLO-Ae-NGn"/>
+                                            <constraint firstAttribute="height" constant="36" id="xjx-GW-YMo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Simple app" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tig-sF-TtF">
+                                        <rect key="frame" x="198.66666666666669" y="0.0" width="120" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="zD3-jT-eYc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Fe5-ho-Uqq" secondAttribute="bottom" constant="5" id="PT4-NV-a1S"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tig-sF-TtF" secondAttribute="bottom" constant="5" id="lcE-nX-VcF"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.10000000000000001" contentMode="scaleToFill" text="Type something..." translatesAutoresizingMaskIntoConstraints="NO" id="xLU-0h-o9a">
+                                <rect key="frame" x="15" y="54" width="384" height="594"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="1" green="0.6761493448" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JJj-3H-ekv" id="fkt-Tp-rZJ"/>
+                                </connections>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gFz-DH-jS7">
+                                <rect key="frame" x="77" y="656" width="260" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cancel" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlu-Rj-vTZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="TYl-mb-Feh"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="kfc-XF-4Lh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="JJj-3H-ekv" eventType="touchUpInside" id="Hdr-fJ-CWf"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" restorationIdentifier="save" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-CW-IKm">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="9Na-tN-GQ3"/>
+                                            <constraint firstAttribute="height" constant="40" id="tN4-Cq-jJP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveButton:" destination="JJj-3H-ekv" eventType="touchUpInside" id="uJO-Yv-zZV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="XJH-mB-oeH"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cHK-nH-6ym" firstAttribute="top" secondItem="ab9-5x-6v1" secondAttribute="top" constant="10" id="1bm-dx-yL4"/>
+                            <constraint firstItem="ab9-5x-6v1" firstAttribute="trailing" secondItem="xLU-0h-o9a" secondAttribute="trailing" constant="15" id="9qi-ht-cqA"/>
+                            <constraint firstItem="ab9-5x-6v1" firstAttribute="bottom" secondItem="gFz-DH-jS7" secondAttribute="bottom" constant="20" id="CdO-fA-Emk"/>
+                            <constraint firstItem="xLU-0h-o9a" firstAttribute="top" secondItem="cHK-nH-6ym" secondAttribute="bottom" constant="8" id="Er5-To-d30"/>
+                            <constraint firstItem="xLU-0h-o9a" firstAttribute="leading" secondItem="ab9-5x-6v1" secondAttribute="leading" constant="15" id="JpK-03-9WE"/>
+                            <constraint firstItem="cHK-nH-6ym" firstAttribute="centerX" secondItem="a2M-lx-WDC" secondAttribute="centerX" id="M9Q-gA-Ydy"/>
+                            <constraint firstItem="gFz-DH-jS7" firstAttribute="centerX" secondItem="a2M-lx-WDC" secondAttribute="centerX" id="lcG-ok-6UW"/>
+                            <constraint firstItem="gFz-DH-jS7" firstAttribute="top" secondItem="xLU-0h-o9a" secondAttribute="bottom" constant="8" id="pqo-BN-Pb7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ab9-5x-6v1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4dY-uJ-Y32"/>
+                    <connections>
+                        <outlet property="bottomStackConstraint" destination="CdO-fA-Emk" id="svt-5M-wJz"/>
+                        <outlet property="cancelButton" destination="Qlu-Rj-vTZ" id="Rfh-6e-2nI"/>
+                        <outlet property="noteTextView" destination="xLU-0h-o9a" id="kwZ-XJ-srH"/>
+                        <outlet property="saveButton" destination="3K7-CW-IKm" id="xf9-Ww-gGN"/>
+                        <outlet property="simpleAppLabel" destination="Tig-sF-TtF" id="dQt-Kt-3oi"/>
+                        <outlet property="simpleNoteLabel" destination="Fe5-ho-Uqq" id="rys-Uw-OhG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlL-Ee-1bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2424.6376811594205" y="96.195652173913047"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sf9-vd-dhk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" hidesBarsOnSwipe="YES" id="ou6-wO-KHj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="27c-zu-qSR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                            <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zYo-IZ-uyR" kind="relationship" relationship="rootViewController" id="4lp-zL-ofB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZKD-c4-A35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="96"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+    </resources>
+</document>
